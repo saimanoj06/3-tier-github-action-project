@@ -35,6 +35,8 @@ jobs:
       steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Cleanup stale Gitleaks binaries
+        run: rm -f /tmp/gitleaks.tmp
       - name: Gitleaks
         uses: gitleaks/gitleaks-action@v2.3.4
       - name: Gitleaks scan
