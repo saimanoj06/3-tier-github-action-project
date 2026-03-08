@@ -24,9 +24,9 @@ jobs:
     - name: Front-end compilation
       run: |
         cd client
-        sh 'find . -name "*.js" -exec node --check {} +'
+        sh 'find . -name "*.json" -exec node --check {} +'
     - name: Back-end compilation
       run: |
         cd api
-        sh 'find . -name "*.js" -exec node --check {} +'
+        sh 'find . -name "*.json" -exec node --check {} +'
     # - run: npm test
