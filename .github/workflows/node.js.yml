@@ -51,14 +51,13 @@ jobs:
       steps:
         - name: Checkout code
           uses: actions/checkout@v4
-        - name: Run Trivy vulnerability scanner in fs mode
-          uses: aquasecurity/trivy-action@0.28.0
+        - name: Run Trivy vulnerability scanner in repo mode
+          uses: aquasecurity/trivy-action@0.33.1
           with:
-            scan-type: "fs"
-            format: table
-            scan-ref: .
-            severity: HIGH,CRITICAL
+            scan-type: 'fs'
             ignore-unfixed: true
-            # exit-code: 1
+            format: 'sarif'
+            output: 'trivy-results.sarif'
+            severity: 'CRITICAL'
           
     
